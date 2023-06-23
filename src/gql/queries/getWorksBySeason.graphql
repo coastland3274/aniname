@@ -1,0 +1,16 @@
+query getWorksBySeason($season: String!) {
+  searchWorks(
+    seasons: [$season]
+    orderBy: { field: WATCHERS_COUNT, direction: DESC }
+  ) {
+    edges {
+      node {
+        annictId
+        titleEn
+        media
+        officialSiteUrl
+        twitterUsername
+      }
+    }
+  }
+}
