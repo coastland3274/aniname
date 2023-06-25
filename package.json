@@ -41,6 +41,7 @@
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-graphql-request": "^5.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@svgr/webpack": "^8.0.1",
     "@types/eslint": "8.40.2",
     "@types/eslint-config-prettier": "^6.11.0",
     "@types/gtag.js": "^0.0.12",

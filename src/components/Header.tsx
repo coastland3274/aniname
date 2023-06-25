@@ -5,23 +5,22 @@ import {
   Container,
   Flex,
   IconButton,
-  Image,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { RxMoon, RxSun } from 'react-icons/rx';
+import Aniname from '@/svgs/aniname.svg';
 
 const Header: FC = () => {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const colorModeIcon = useColorModeValue(<RxMoon />, <RxSun />);
-  const logo = useColorModeValue('/aniname_light.svg', '/aniname_dark.svg');
 
   return (
     <Box as="header" shadow="sm">
       <Container>
         <Flex align="center" h="16">
           <Link href="/">
-            <Image alt="" src={logo} />
+            <Aniname fill={colorMode === 'light' ? 'black' : 'white'} />
           </Link>
           <IconButton
             ml="auto"
