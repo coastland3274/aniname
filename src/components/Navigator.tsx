@@ -16,8 +16,14 @@ const Navigator: FC<Props> = ({ season, navigation }) => {
     back: <RxChevronLeft />,
     forward: <RxChevronRight />,
   };
+  const labels = {
+    back: 'Previous season',
+    forward: 'Next season',
+  };
 
-  const children = <IconButton aria-label="" icon={icons[navigation]} />;
+  const children = (
+    <IconButton aria-label={labels[navigation]} icon={icons[navigation]} />
+  );
 
   return season ? (
     <Link href={`/seasons/${season.slug}`}>{children}</Link>

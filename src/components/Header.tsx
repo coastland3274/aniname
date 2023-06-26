@@ -14,6 +14,10 @@ import Aniname from '@/svgs/aniname.svg';
 const Header: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const colorModeIcon = useColorModeValue(<RxMoon />, <RxSun />);
+  const labels = {
+    light: 'Use Dark Mode',
+    dark: 'Use Light Mode',
+  };
 
   return (
     <Box as="header" shadow="sm">
@@ -25,7 +29,7 @@ const Header: FC = () => {
           <IconButton
             ml="auto"
             fontSize="2xl"
-            aria-label=""
+            aria-label={labels[colorMode]}
             icon={colorModeIcon}
             onClick={toggleColorMode}
             variant="ghost"
