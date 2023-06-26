@@ -13,7 +13,7 @@ const Works: FC<Props> = ({ seasonSlug, works }) => {
   return (
     <Box my="8">
       <Container>
-        <Flex align="center" justify="center" mb="8">
+        <Flex align="center" justify="center" mb="10">
           <NavigationBar seasonSlug={seasonSlug} />
         </Flex>
         <WorkCardList works={works} />

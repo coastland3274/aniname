@@ -9,7 +9,7 @@ type Props = {
 
 const WorkCardList: FC<Props> = ({ works }) => {
   return (
-    <SimpleGrid minChildWidth="80" spacingX="8" spacingY="4">
+    <SimpleGrid minChildWidth="80" spacing="6">
       {works.map((work) => (
         <WorkCard key={work.id} work={work} />
       ))}

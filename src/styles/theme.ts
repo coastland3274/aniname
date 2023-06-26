@@ -12,7 +12,7 @@ const theme = extendTheme({
   components: {
     Container: {
       baseStyle: {
-        maxW: 'container.xl',
+        maxW: 'container.lg',
       },
     },
   },
