@@ -24,7 +24,10 @@ const Header: FC = () => {
       <Container>
         <Flex align="center" h="16">
           <Link href="/">
-            <Aniname fill={colorMode === 'light' ? 'black' : 'white'} />
+            <Aniname
+              aria-label="Aniname"
+              fill={colorMode === 'light' ? 'black' : 'white'}
+            />
           </Link>
           <IconButton
             ml="auto"
