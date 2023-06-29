@@ -2,23 +2,23 @@ import type { FC } from 'react';
 import { Link } from '@chakra-ui/next-js';
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { RxChevronDown } from 'react-icons/rx';
-import { seasons } from '@/lib/season';
-import type { Season } from '@/types/season';
+import { convert, seasonSlugs } from '@/lib/season';
+import type { SeasonSlug } from '@/types/season';
 
 type Props = {
-  season: Season;
+  seasonSlug: SeasonSlug;
 };
 
-const SeasonSelector: FC<Props> = ({ season }) => {
+const SeasonSelector: FC<Props> = ({ seasonSlug }) => {
   return (
     <Menu autoSelect={false}>
       <MenuButton as={Button} w="40" rightIcon={<RxChevronDown />}>
-        {season.en}
+        {convert(seasonSlug)}
       </MenuButton>
       <MenuList sx={{ minWidth: 'initial', overflowY: 'scroll' }} w="40" h="64">
-        {seasons.map((s) => (
-          <Link key={s.slug} href={`/seasons/${s.slug}`}>
-            <MenuItem>{s.en}</MenuItem>
+        {seasonSlugs.map((s) => (
+          <Link key={s} href={`/seasons/${s}`}>
+            <MenuItem>{convert(s)}</MenuItem>
           </Link>
         ))}
       </MenuList>

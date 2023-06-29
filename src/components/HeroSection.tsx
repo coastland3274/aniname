@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from '@chakra-ui/next-js';
 import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react';
-import { baseDateSlug } from '@/lib/season';
+import { baseSeasonSlug } from '@/lib/season';
 
 const HeroSection: FC = () => {
   return (
@@ -23,7 +23,7 @@ const HeroSection: FC = () => {
           official websites and Twitter usernames of animes.
         </Text>
         <Flex justify="center" pt="40px">
-          <Link href={`/seasons/${baseDateSlug}`}>
+          <Link href={`/seasons/${baseSeasonSlug}`}>
             <Button size="lg">Seasonal Anime</Button>
           </Link>
         </Flex>

@@ -9,13 +9,13 @@ type Props = {
 };
 
 const NavigationBar: FC<Props> = ({ seasonSlug }) => {
-  const seasons = getAdjacent(seasonSlug, 'slug');
+  const seasons = getAdjacent(seasonSlug);
 
   return (
     <Flex align="center" gap={{ base: 12, md: 16 }}>
-      <Navigator season={seasons.prev} navigation="back" />
-      <Selector season={seasons.current} />
-      <Navigator season={seasons.next} navigation="forward" />
+      <Navigator seasonSlug={seasons.prev} navigation="back" />
+      <Selector seasonSlug={seasons.current} />
+      <Navigator seasonSlug={seasons.next} navigation="forward" />
     </Flex>
   );
 };

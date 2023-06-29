@@ -2,7 +2,7 @@ import type { ParsedUrlQuery } from 'querystring';
 import type { FC } from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { sdk } from '@/lib/gql';
-import { convert, seasons } from '@/lib/season';
+import { convert, seasonSlugs } from '@/lib/season';
 import type { Work } from '@/types/work';
 import CustomHead from '@/components/CustomHead';
 import Works from '@/components/Works';
@@ -19,7 +19,7 @@ type Params = ParsedUrlQuery & {
 const SeasonPage: FC<Props> = ({ seasonSlug, works }) => {
   return (
     <>
-      <CustomHead title={convert(seasonSlug, 'slug', 'en')} />
+      <CustomHead title={convert(seasonSlug)} />
       <Works seasonSlug={seasonSlug} works={works} />
     </>
   );
@@ -52,8 +52,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
-  const paths = seasons.map((season) => ({
-    params: { seasonSlug: season.slug },
+  const paths = seasonSlugs.map((seasonSlug) => ({
+    params: { seasonSlug },
   }));
 
   return { paths, fallback: false };
